@@ -36,8 +36,6 @@
             btncategorie = new Button();
             btnutilisateur = new Button();
             btnclient = new Button();
-            panel2 = new Panel();
-            panel3 = new Panel();
             panelParametre = new Panel();
             button7 = new Button();
             button6 = new Button();
@@ -46,9 +44,13 @@
             btnparam = new Button();
             button2 = new Button();
             button1 = new Button();
+            panel2 = new Panel();
+            pnlaficher = new Panel();
+            panel3 = new Panel();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             panelParametre.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -64,7 +66,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(229, 657);
+            panel1.Size = new Size(202, 627);
             panel1.TabIndex = 0;
             // 
             // button3
@@ -73,12 +75,12 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Image = Properties.Resources.Menu_32;
-            button3.Location = new Point(188, 15);
+            button3.Location = new Point(161, 15);
             button3.Name = "button3";
             button3.Size = new Size(29, 23);
             button3.TabIndex = 7;
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click_1;
+            button3.Click += button3_Click;
             // 
             // btncommande
             // 
@@ -92,11 +94,11 @@
             btncommande.ImageAlign = ContentAlignment.MiddleLeft;
             btncommande.Location = new Point(12, 449);
             btncommande.Name = "btncommande";
-            btncommande.Size = new Size(214, 55);
+            btncommande.Size = new Size(205, 55);
             btncommande.TabIndex = 6;
             btncommande.Text = "       Commande";
             btncommande.UseVisualStyleBackColor = false;
-            btncommande.Click += btncommande_Click_1;
+            btncommande.Click += btncommande_Click;
             // 
             // pnlbutn
             // 
@@ -122,7 +124,6 @@
             btnproduit.TabIndex = 4;
             btnproduit.Text = "    Produit";
             btnproduit.UseVisualStyleBackColor = false;
-            btnproduit.Click += btnproduit_Click;
             // 
             // btncategorie
             // 
@@ -140,7 +141,6 @@
             btncategorie.TabIndex = 3;
             btncategorie.Text = "    Categorie";
             btncategorie.UseVisualStyleBackColor = false;
-            btncategorie.Click += btncategorie_Click;
             // 
             // btnutilisateur
             // 
@@ -158,7 +158,6 @@
             btnutilisateur.TabIndex = 2;
             btnutilisateur.Text = "   Utilisateur";
             btnutilisateur.UseVisualStyleBackColor = false;
-            btnutilisateur.Click += btnutilisateur_Click;
             // 
             // btnclient
             // 
@@ -178,28 +177,6 @@
             btnclient.UseVisualStyleBackColor = false;
             btnclient.Click += btnclient_Click;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(178, 8, 55);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(229, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(643, 10);
-            panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(panelParametre);
-            panel3.Controls.Add(btnparam);
-            panel3.Controls.Add(button2);
-            panel3.Controls.Add(button1);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(229, 10);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(643, 647);
-            panel3.TabIndex = 2;
-            panel3.Paint += panel3_Paint;
-            // 
             // panelParametre
             // 
             panelParametre.BackColor = Color.FromArgb(41, 39, 40);
@@ -207,11 +184,10 @@
             panelParametre.Controls.Add(button6);
             panelParametre.Controls.Add(button5);
             panelParametre.Controls.Add(button4);
-            panelParametre.Location = new Point(38, 0);
+            panelParametre.Location = new Point(49, 12);
             panelParametre.Name = "panelParametre";
-            panelParametre.Size = new Size(388, 206);
+            panelParametre.Size = new Size(359, 21);
             panelParametre.TabIndex = 9;
-            panelParametre.Paint += panelParametre_Paint;
             // 
             // button7
             // 
@@ -225,7 +201,7 @@
             button7.ImageAlign = ContentAlignment.MiddleLeft;
             button7.Location = new Point(3, 156);
             button7.Name = "button7";
-            button7.Size = new Size(388, 45);
+            button7.Size = new Size(352, 45);
             button7.TabIndex = 3;
             button7.Text = "Déonnecter";
             button7.UseVisualStyleBackColor = false;
@@ -242,7 +218,7 @@
             button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.Location = new Point(3, 105);
             button6.Name = "button6";
-            button6.Size = new Size(388, 45);
+            button6.Size = new Size(352, 45);
             button6.TabIndex = 2;
             button6.Text = "      Réstaurer une copie de l'application";
             button6.UseVisualStyleBackColor = false;
@@ -259,7 +235,7 @@
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.Location = new Point(3, 54);
             button5.Name = "button5";
-            button5.Size = new Size(382, 45);
+            button5.Size = new Size(352, 45);
             button5.TabIndex = 1;
             button5.Text = "Créer une copie de l'application";
             button5.UseVisualStyleBackColor = false;
@@ -276,23 +252,23 @@
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.Location = new Point(3, 3);
             button4.Name = "button4";
-            button4.Size = new Size(382, 45);
+            button4.Size = new Size(352, 45);
             button4.TabIndex = 0;
             button4.Text = "Connecter";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click_1;
+            button4.Click += button4_Click_2;
             // 
             // btnparam
             // 
             btnparam.FlatAppearance.BorderSize = 0;
             btnparam.FlatStyle = FlatStyle.Flat;
             btnparam.Image = Properties.Resources.Settings_32;
-            btnparam.Location = new Point(0, 4);
+            btnparam.Location = new Point(254, 15);
             btnparam.Name = "btnparam";
-            btnparam.Size = new Size(40, 28);
+            btnparam.Size = new Size(37, 36);
             btnparam.TabIndex = 8;
             btnparam.UseVisualStyleBackColor = true;
-            btnparam.Click += btnparam_Click;
+            btnparam.Click += btnparam_Click_1;
             // 
             // button2
             // 
@@ -300,12 +276,12 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = Properties.Resources.Subtract_32;
-            button2.Location = new Point(560, 5);
+            button2.Location = new Point(1104, 13);
             button2.Name = "button2";
             button2.Size = new Size(29, 23);
             button2.TabIndex = 7;
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -313,20 +289,50 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = Properties.Resources.Shutdown_32;
-            button1.Location = new Point(595, 0);
+            button1.Location = new Point(1139, 11);
             button1.Name = "button1";
-            button1.Size = new Size(37, 32);
+            button1.Size = new Size(37, 27);
             button1.TabIndex = 6;
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(178, 8, 55);
+            panel2.Controls.Add(panelParametre);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(202, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(974, 10);
+            panel2.TabIndex = 1;
+            // 
+            // pnlaficher
+            // 
+            pnlaficher.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlaficher.BackColor = SystemColors.Control;
+            pnlaficher.Location = new Point(0, 0);
+            pnlaficher.Name = "pnlaficher";
+            pnlaficher.Size = new Size(944, 570);
+            pnlaficher.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(pnlaficher);
+            panel3.Location = new Point(232, 57);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1104, 570);
+            panel3.TabIndex = 2;
+            panel3.Paint += panel3_Paint;
             // 
             // FRM_Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(872, 657);
+            ClientSize = new Size(1176, 627);
             Controls.Add(panel3);
+            Controls.Add(button1);
+            Controls.Add(button2);
             Controls.Add(panel2);
+            Controls.Add(btnparam);
             Controls.Add(panel1);
             ForeColor = SystemColors.ControlLight;
             FormBorderStyle = FormBorderStyle.None;
@@ -334,15 +340,16 @@
             Text = "FRM_Menu";
             WindowState = FormWindowState.Minimized;
             panel1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             panelParametre.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
+        
         private Button btnclient;
         private Button btnproduit;
         private Button btncategorie;
@@ -350,7 +357,7 @@
         private Panel pnlbutn;
         private Button btncommande;
         private Button button3;
-        private Panel panel3;
+  
         private Panel panelParametre;
         private Button button7;
         private Button button6;
@@ -359,5 +366,8 @@
         private Button btnparam;
         private Button button2;
         private Button button1;
+        private Panel panel2;
+        private Panel pnlaficher;
+        private Panel panel3;
     }
 }

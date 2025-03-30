@@ -31,6 +31,16 @@ namespace projetfs
         private void btnclient_Click(object sender, EventArgs e)
         {
             pnlbutn.Top = btnclient.Top;
+            if (!pnlaficher.Controls.Contains(USER_List_Client.Instance))
+            {
+                pnlaficher.Controls.Add(USER_List_Client.Instance);
+                USER_List_Client.Instance.Dock = DockStyle.Fill;
+                USER_List_Client.Instance.BringToFront();
+            }
+            else
+            {
+                USER_List_Client.Instance.BringToFront();
+            }
         }
 
         private void btnproduit_Click(object sender, EventArgs e)
@@ -104,6 +114,49 @@ namespace projetfs
             frmc.ShowDialog();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (panel1.Width == 229)
+            {
+                panel1.Size = new Size(82, 657);
+            }
+            else
+            {
+                panel1.Size = new Size(229, 657);
+            }
+            panel1.Refresh();
+
+        }
+
+        private void btnparam_Click_1(object sender, EventArgs e)
+        {
+
+            panelParametre.Size = new Size(388, 208);
+            panelParametre.Visible = !panelParametre.Visible;
+
+
+        }
+
+        private void btncommande_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlaficher_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
