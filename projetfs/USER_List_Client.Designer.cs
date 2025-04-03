@@ -11,14 +11,7 @@
         /// Nettoyage des ressources utilisées.
         /// </summary>
         /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
 
         #region Code généré par le Concepteur de composants
 
@@ -39,11 +32,12 @@
             comboBox1 = new ComboBox();
             dvgclient = new DataGridView();
             Column1 = new DataGridViewCheckBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dvgclient).BeginInit();
             SuspendLayout();
@@ -57,13 +51,13 @@
             btnajouterclient.ForeColor = SystemColors.ControlLightLight;
             btnajouterclient.Image = Properties.Resources.Actions_list_add_icon;
             btnajouterclient.ImageAlign = ContentAlignment.MiddleLeft;
-            btnajouterclient.Location = new Point(20, 25);
+            btnajouterclient.Location = new Point(48, 22);
             btnajouterclient.Name = "btnajouterclient";
-            btnajouterclient.Size = new Size(269, 53);
+            btnajouterclient.Size = new Size(290, 53);
             btnajouterclient.TabIndex = 0;
             btnajouterclient.Text = "Ajouter";
             btnajouterclient.UseVisualStyleBackColor = false;
-            btnajouterclient.Click += btnajouterclient_Click;
+            btnajouterclient.Click += btnajouterclient_Click_1;
             // 
             // btnsupprimerclient
             // 
@@ -74,12 +68,13 @@
             btnsupprimerclient.ForeColor = SystemColors.ControlLightLight;
             btnsupprimerclient.Image = Properties.Resources.Close_2_icon;
             btnsupprimerclient.ImageAlign = ContentAlignment.MiddleLeft;
-            btnsupprimerclient.Location = new Point(635, 25);
+            btnsupprimerclient.Location = new Point(700, 22);
             btnsupprimerclient.Name = "btnsupprimerclient";
-            btnsupprimerclient.Size = new Size(267, 53);
+            btnsupprimerclient.Size = new Size(347, 53);
             btnsupprimerclient.TabIndex = 1;
             btnsupprimerclient.Text = "Supprimer";
             btnsupprimerclient.UseVisualStyleBackColor = false;
+            btnsupprimerclient.Click += btnsupprimerclient_Click_1;
             // 
             // btnmodifierclient
             // 
@@ -90,29 +85,30 @@
             btnmodifierclient.ForeColor = SystemColors.ControlLightLight;
             btnmodifierclient.Image = Properties.Resources.Recycle_iconaaa;
             btnmodifierclient.ImageAlign = ContentAlignment.MiddleLeft;
-            btnmodifierclient.Location = new Point(322, 25);
+            btnmodifierclient.Location = new Point(371, 22);
             btnmodifierclient.Name = "btnmodifierclient";
-            btnmodifierclient.Size = new Size(272, 53);
+            btnmodifierclient.Size = new Size(307, 53);
             btnmodifierclient.TabIndex = 2;
             btnmodifierclient.Text = "Modifier";
             btnmodifierclient.UseVisualStyleBackColor = false;
+            btnmodifierclient.Click += btnmodifierclient_Click_1;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(30, 28, 38);
-            panel1.Location = new Point(20, 84);
+            panel1.Location = new Point(48, 81);
             panel1.Name = "panel1";
-            panel1.Size = new Size(885, 3);
+            panel1.Size = new Size(999, 3);
             panel1.TabIndex = 3;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(30, 28, 38);
-            panel2.Location = new Point(20, 171);
+            panel2.Location = new Point(48, 168);
             panel2.Name = "panel2";
-            panel2.Size = new Size(885, 3);
+            panel2.Size = new Size(999, 3);
             panel2.TabIndex = 4;
             // 
             // textBox1
@@ -121,18 +117,19 @@
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.ForeColor = Color.DimGray;
-            textBox1.Location = new Point(513, 109);
+            textBox1.Location = new Point(541, 106);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(334, 33);
             textBox1.TabIndex = 5;
             textBox1.Text = "Recherche";
             textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(30, 28, 38);
-            panel3.Location = new Point(513, 148);
+            panel3.Location = new Point(541, 145);
             panel3.Name = "panel3";
             panel3.Size = new Size(334, 3);
             panel3.TabIndex = 6;
@@ -142,8 +139,8 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.Font = new Font("Segoe UI", 15F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Nom", "Prenom", "Age", "Teléphone", "Email", "Ville", "Pays" });
-            comboBox1.Location = new Point(196, 108);
+            comboBox1.Items.AddRange(new object[] { "Nom", "Prenom", "Adresse", "Teléphone", "Email", "Pays" });
+            comboBox1.Location = new Point(224, 105);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(291, 43);
             comboBox1.TabIndex = 7;
@@ -164,22 +161,27 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dvgclient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dvgclient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgclient.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            dvgclient.Columns.AddRange(new DataGridViewColumn[] { Column1, Column9, Column2, Column3, Column8, Column4, Column5, Column7 });
             dvgclient.EnableHeadersVisualStyles = false;
-            dvgclient.Location = new Point(6, 180);
+            dvgclient.Location = new Point(48, 174);
             dvgclient.Name = "dvgclient";
             dvgclient.RowHeadersVisible = false;
             dvgclient.RowHeadersWidth = 51;
             dvgclient.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dvgclient.Size = new Size(960, 299);
+            dvgclient.Size = new Size(1005, 386);
             dvgclient.TabIndex = 8;
-            dvgclient.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
             Column1.HeaderText = "Select";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Id";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
             // 
             // Column2
             // 
@@ -197,6 +199,12 @@
             Column3.Resizable = DataGridViewTriState.True;
             Column3.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
+            // Column8
+            // 
+            Column8.HeaderText = "Email";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            // 
             // Column4
             // 
             Column4.HeaderText = "Adresse";
@@ -212,14 +220,6 @@
             Column5.Name = "Column5";
             Column5.Resizable = DataGridViewTriState.True;
             Column5.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Ville";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.Resizable = DataGridViewTriState.True;
-            Column6.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // Column7
             // 
@@ -243,8 +243,7 @@
             Controls.Add(btnsupprimerclient);
             Controls.Add(btnajouterclient);
             Name = "USER_List_Client";
-            Size = new Size(966, 479);
-            Load += USER_List_Client_Load;
+            Size = new Size(1080, 605);
             ((System.ComponentModel.ISupportInitialize)dvgclient).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -262,11 +261,12 @@
         private ComboBox comboBox1;
         private DataGridView dvgclient;
         private DataGridViewCheckBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
     }
 }

@@ -50,7 +50,6 @@
             panel1.SuspendLayout();
             panelParametre.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -66,7 +65,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(202, 627);
+            panel1.Size = new Size(202, 694);
             panel1.TabIndex = 0;
             // 
             // button3
@@ -80,7 +79,6 @@
             button3.Size = new Size(29, 23);
             button3.TabIndex = 7;
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // btncommande
             // 
@@ -98,7 +96,6 @@
             btncommande.TabIndex = 6;
             btncommande.Text = "       Commande";
             btncommande.UseVisualStyleBackColor = false;
-            btncommande.Click += btncommande_Click;
             // 
             // pnlbutn
             // 
@@ -124,6 +121,7 @@
             btnproduit.TabIndex = 4;
             btnproduit.Text = "    Produit";
             btnproduit.UseVisualStyleBackColor = false;
+            btnproduit.Click += btnproduit_Click_1;
             // 
             // btncategorie
             // 
@@ -141,6 +139,7 @@
             btncategorie.TabIndex = 3;
             btncategorie.Text = "    Categorie";
             btncategorie.UseVisualStyleBackColor = false;
+            btncategorie.Click += btncategorie_Click_1;
             // 
             // btnutilisateur
             // 
@@ -158,6 +157,7 @@
             btnutilisateur.TabIndex = 2;
             btnutilisateur.Text = "   Utilisateur";
             btnutilisateur.UseVisualStyleBackColor = false;
+            btnutilisateur.Click += btnutilisateur_Click_1;
             // 
             // btnclient
             // 
@@ -256,7 +256,6 @@
             button4.TabIndex = 0;
             button4.Text = "Connecter";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click_2;
             // 
             // btnparam
             // 
@@ -268,7 +267,6 @@
             btnparam.Size = new Size(37, 36);
             btnparam.TabIndex = 8;
             btnparam.UseVisualStyleBackColor = true;
-            btnparam.Click += btnparam_Click_1;
             // 
             // button2
             // 
@@ -276,12 +274,11 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Image = Properties.Resources.Subtract_32;
-            button2.Location = new Point(1104, 13);
+            button2.Location = new Point(1251, 13);
             button2.Name = "button2";
             button2.Size = new Size(29, 23);
             button2.TabIndex = 7;
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -289,7 +286,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = Properties.Resources.Shutdown_32;
-            button1.Location = new Point(1139, 11);
+            button1.Location = new Point(1286, 11);
             button1.Name = "button1";
             button1.Size = new Size(37, 27);
             button1.TabIndex = 6;
@@ -302,32 +299,32 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(202, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(974, 10);
+            panel2.Size = new Size(1121, 10);
             panel2.TabIndex = 1;
             // 
             // pnlaficher
             // 
             pnlaficher.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlaficher.BackColor = SystemColors.Control;
-            pnlaficher.Location = new Point(0, 0);
+            pnlaficher.Location = new Point(232, 57);
             pnlaficher.Name = "pnlaficher";
-            pnlaficher.Size = new Size(944, 570);
+            pnlaficher.Size = new Size(1091, 636);
             pnlaficher.TabIndex = 10;
+            pnlaficher.Paint += pnlaficher_Paint;
             // 
             // panel3
             // 
-            panel3.Controls.Add(pnlaficher);
             panel3.Location = new Point(232, 57);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1104, 570);
+            panel3.Size = new Size(1071, 653);
             panel3.TabIndex = 2;
-            panel3.Paint += panel3_Paint;
             // 
             // FRM_Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1176, 627);
+            ClientSize = new Size(1323, 694);
+            Controls.Add(pnlaficher);
             Controls.Add(panel3);
             Controls.Add(button1);
             Controls.Add(button2);
@@ -342,7 +339,6 @@
             panel1.ResumeLayout(false);
             panelParametre.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 

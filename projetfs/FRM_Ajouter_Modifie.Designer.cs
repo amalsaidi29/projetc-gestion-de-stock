@@ -11,14 +11,6 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
 
@@ -105,7 +97,6 @@
             btnajouterclient.TabIndex = 2;
             btnajouterclient.Text = "Ajouter Produit";
             btnajouterclient.UseVisualStyleBackColor = false;
-            btnajouterclient.Click += btnajouterclient_Click;
             // 
             // pictureProduit
             // 
@@ -115,6 +106,7 @@
             pictureProduit.Size = new Size(221, 148);
             pictureProduit.TabIndex = 3;
             pictureProduit.TabStop = false;
+            pictureProduit.Click += pictureProduit_Click_1;
             // 
             // label1
             // 
@@ -241,6 +233,7 @@
             btnEnregister.TabIndex = 19;
             btnEnregister.Text = "Enregistrer";
             btnEnregister.UseVisualStyleBackColor = false;
+            btnEnregister.Click += btnEnregister_Click;
             // 
             // label2
             // 
