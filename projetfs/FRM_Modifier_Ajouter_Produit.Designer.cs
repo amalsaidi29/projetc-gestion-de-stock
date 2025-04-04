@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dvglclient = new DataGridView();
             Column1 = new DataGridViewCheckBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
@@ -42,9 +42,8 @@
             btnmodifierclient = new Button();
             btnsupprimerclient = new Button();
             btnajouterclient = new Button();
-            button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
+            buttIprimer = new Button();
             btnafficheIm = new Button();
             button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dvglclient).BeginInit();
@@ -56,14 +55,14 @@
             dvglclient.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dvglclient.BackgroundColor = SystemColors.Control;
             dvglclient.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(30, 28, 38);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dvglclient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 28, 38);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dvglclient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dvglclient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvglclient.Columns.AddRange(new DataGridViewColumn[] { Column1, Column9, Column2, Column3, Column4, Column5 });
             dvglclient.EnableHeadersVisualStyles = false;
@@ -132,6 +131,7 @@
             textBox1.TabIndex = 14;
             textBox1.Text = "Recherche";
             textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // panel1
             // 
@@ -174,6 +174,7 @@
             btnsupprimerclient.TabIndex = 10;
             btnsupprimerclient.Text = "Supprimer";
             btnsupprimerclient.UseVisualStyleBackColor = false;
+            btnsupprimerclient.Click += btnsupprimerclient_Click;
             // 
             // btnajouterclient
             // 
@@ -192,22 +193,6 @@
             btnajouterclient.UseVisualStyleBackColor = false;
             btnajouterclient.Click += btnajouterclient_Click_1;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(30, 28, 38);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = Properties.Resources.Imprimer;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(407, 568);
-            button1.Name = "button1";
-            button1.Size = new Size(294, 53);
-            button1.TabIndex = 20;
-            button1.Text = "Imprimer Toutes";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(30, 28, 38);
@@ -224,21 +209,22 @@
             button2.Text = "   Sauvegarder dans Excel";
             button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // buttIprimer
             // 
-            button3.BackColor = Color.FromArgb(30, 28, 38);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Image = Properties.Resources.Imprimer;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(20, 568);
-            button3.Name = "button3";
-            button3.Size = new Size(301, 53);
-            button3.TabIndex = 18;
-            button3.Text = "   Imprimer PR cocher";
-            button3.UseVisualStyleBackColor = false;
+            buttIprimer.BackColor = Color.FromArgb(30, 28, 38);
+            buttIprimer.FlatAppearance.BorderSize = 0;
+            buttIprimer.FlatStyle = FlatStyle.Flat;
+            buttIprimer.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttIprimer.ForeColor = SystemColors.ControlLightLight;
+            buttIprimer.Image = Properties.Resources.Imprimer;
+            buttIprimer.ImageAlign = ContentAlignment.MiddleLeft;
+            buttIprimer.Location = new Point(20, 568);
+            buttIprimer.Name = "buttIprimer";
+            buttIprimer.Size = new Size(301, 53);
+            buttIprimer.TabIndex = 18;
+            buttIprimer.Text = "   Imprimer PR cocher";
+            buttIprimer.UseVisualStyleBackColor = false;
+            buttIprimer.Click += buttIprimer_Click;
             // 
             // btnafficheIm
             // 
@@ -272,6 +258,7 @@
             button5.TabIndex = 22;
             button5.Text = "Actualiser";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // FRM_Modifier_Ajouter_Produit
             // 
@@ -279,9 +266,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button5);
             Controls.Add(btnafficheIm);
-            Controls.Add(button1);
             Controls.Add(button2);
-            Controls.Add(button3);
+            Controls.Add(buttIprimer);
             Controls.Add(dvglclient);
             Controls.Add(panel3);
             Controls.Add(textBox1);
@@ -305,9 +291,8 @@
         private Button btnmodifierclient;
         private Button btnsupprimerclient;
         private Button btnajouterclient;
-        private Button button1;
         private Button button2;
-        private Button button3;
+        private Button buttIprimer;
         private Button btnafficheIm;
         private DataGridViewCheckBoxColumn Column1;
         private DataGridViewTextBoxColumn Column9;

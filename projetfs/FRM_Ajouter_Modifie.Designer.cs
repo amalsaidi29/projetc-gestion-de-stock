@@ -41,7 +41,6 @@
             label2 = new Label();
             combocategorie = new ComboBox();
             btnquiter = new Button();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureProduit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -265,27 +264,12 @@
             btnquiter.TabIndex = 22;
             btnquiter.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.FlatAppearance.BorderColor = SystemColors.Highlight;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(178, 274);
-            button1.Name = "button1";
-            button1.Size = new Size(161, 37);
-            button1.TabIndex = 23;
-            button1.Text = "Parcourire..";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // FRM_Ajouter_Modifie
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 28, 38);
             ClientSize = new Size(732, 455);
-            Controls.Add(button1);
             Controls.Add(btnquiter);
             Controls.Add(combocategorie);
             Controls.Add(label2);
@@ -341,6 +325,5 @@
         private Label label2;
         private ComboBox combocategorie;
         private Button btnquiter;
-        private Button button1;
     }
 }

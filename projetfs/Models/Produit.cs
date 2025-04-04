@@ -9,7 +9,7 @@ namespace projetfs.Models
         public string Nom { get; set; } = string.Empty;
         public decimal Prix { get; set; }
         public int Stock { get; set; }
-        public byte[]? ImageData { get; set; }
+        public byte[] ImageData { get; set; }
         public int CategorieId { get; set; }
         public virtual Categorie? Categorie { get; set; }
         public virtual ICollection<CommandeProduit> CommandeProduits { get; set; } = new List<CommandeProduit>();
